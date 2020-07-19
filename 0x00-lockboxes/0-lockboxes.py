@@ -10,8 +10,8 @@ def canUnlockAll(boxes):
     keys.add(0)
 
     length = len(boxes)
-    attemps = 3
-    
+    attemps = 5
+
     while (attemps):
         for boxIndex in range(len(boxes)):
             if boxIndex in keys:
@@ -20,10 +20,8 @@ def canUnlockAll(boxes):
                     keys.add(newKey)
             else:
                 BoxKeys[boxIndex] = False
-                    
-        if sum(keys) == ((length - 1) * length ) / 2 :
-              return True
+
+        if sum(keys) == ((length - 1) * length) / 2:
+            return True
         attemps -= 1
     return False
-            
-    
