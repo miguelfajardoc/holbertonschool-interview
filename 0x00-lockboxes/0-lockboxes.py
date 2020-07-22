@@ -5,23 +5,20 @@
 def canUnlockAll(boxes):
     """ can unlock all boxes?? """
 
-    BoxKeys = {0: False}
-    keys = set()
-    keys.add(0)
+    unusedKeys = [0]
+    usedKeys = set()
 
     length = len(boxes)
-    attemps = 5
 
-    while (attemps):
-        for boxIndex in range(len(boxes)):
-            if boxIndex in keys:
-                BoxKeys[boxIndex] = True
-                for newKey in boxes[boxIndex]:
-                    keys.add(newKey)
-            else:
-                BoxKeys[boxIndex] = False
-
-        if sum(keys) == ((length - 1) * length) / 2:
-            return True
-        attemps -= 1
+    while (unusedKeys):
+        useKey = unusedKeys.pop(0)
+        newKeys = boxes[useKey]
+        usedKeys.add(useKey)
+        for key in newKeys:
+            if key not in usedKeys:
+                unusedKeys.append(key)
+        
+    if sum(usedKeys) == ((length - 1) * length) / 2:
+        return True
+    
     return False
