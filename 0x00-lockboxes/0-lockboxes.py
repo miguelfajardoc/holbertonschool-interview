@@ -5,14 +5,14 @@
 def canUnlockAll(boxes):
     """ can unlock all boxes?? """
 
+    if boxes == None or len(boxes) == 0:
+        return False
     unusedKeys = [0]
     usedKeys = set()
 
     length = len(boxes)
     
     while (unusedKeys):
-        #print("unusedKeys:")
-        #print(unusedKeys)
         useKey = unusedKeys.pop(0)
         newKeys = boxes[useKey]
         usedKeys.add(useKey)
