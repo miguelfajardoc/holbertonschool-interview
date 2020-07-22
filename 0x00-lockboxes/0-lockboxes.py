@@ -5,7 +5,7 @@
 def canUnlockAll(boxes):
     """ can unlock all boxes?? """
 
-    if boxes is None or len(boxes) == 0:
+    if boxes is None:
         return False
     unusedKeys = [0]
     usedKeys = set()
