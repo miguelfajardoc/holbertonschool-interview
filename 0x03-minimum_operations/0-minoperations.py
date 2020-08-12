@@ -14,7 +14,8 @@ def minOperations(n):
     if not isinstance(n, int) or n <= 0:
         return 0
     operations = 0
-    for i in range(2, n + 1):
+    i = 2
+    while i <= n:
         while n % i == 0:
             n = n / i
             operations += i
