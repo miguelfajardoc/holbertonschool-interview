@@ -11,7 +11,7 @@ def minOperations(n):
     return the minumun number of operations or 0 if the number to represent
     its not possible
     """
-    if n <= 0:
+    if not isinstance(n, int) or n <= 0:
         return 0
     operations = 0
     for i in range(2, n + 1):
