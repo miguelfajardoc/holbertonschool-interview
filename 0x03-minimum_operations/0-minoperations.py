@@ -20,4 +20,5 @@ def minOperations(n):
             n = n / i
             operations += i
             # print("n = {} operations with i{} = {}".format(n, i, operations))
+        i += 1
     return operations
