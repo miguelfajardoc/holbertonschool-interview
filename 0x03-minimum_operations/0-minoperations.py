@@ -16,6 +16,7 @@ def minOperations(n):
     operations = 0
     for i in range(2, n + 1):
         while n % i == 0:
-            n = n - n / 2
+            n = n / i
             operations += i
+            # print("n = {} operations with i{} = {}".format(n, i, operations))
     return operations
