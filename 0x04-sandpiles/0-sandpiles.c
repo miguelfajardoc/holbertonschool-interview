@@ -13,7 +13,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
 	int flag = 0;
-	int a = 0;
+
 
 	simple_sand_sum(grid1, grid2);
 	do {
@@ -24,22 +24,22 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			{
 				if (grid1[i][j] > 3)
 				{
-					if (a == 0)
+					if (flag == 0)
 					{
 						printf("=\n");
 						print_grid(grid1);
-						a++;
+						flag++;
 					}
 					make_topple(grid1, i, j);
 					flag = 1;
 				}
 			}
 		}
-		if (flag == 1)
-		{
-			printf("=\n");
-			print_grid(grid1);
-		}
+		/* if (flag == 1) */
+		/* { */
+		/* 	printf("=\n"); */
+		/* 	print_grid(grid1); */
+		/* } */
 	} while (flag);
 }
 
