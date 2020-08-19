@@ -35,11 +35,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 				}
 			}
 		}
-		/* if (flag == 1) */
-		/* { */
-		/* 	printf("=\n"); */
-		/* 	print_grid(grid1); */
-		/* } */
 	} while (flag);
 }
 
@@ -72,8 +67,10 @@ void simple_sand_sum(int grid1[3][3], int grid2[3][3])
  */
 void make_topple(int grid[3][3], int i, int j)
 {
+	printf("mod grid[%d][%d]: %d\n", i, j, grid[i][j]);
+	print_grid(grid);
 	grid[i][j] -= 4;
-	/*printf("mod grid[%d][%d]: %d\n", i, j, grid[i][j]);*/
+
 	if (i + 1 < 3)
 	{
 		/* printf("abajo\n"); */
