@@ -10,8 +10,13 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *aux = *head;
+	listint_t *aux;
 
+	if (*head == NULL)
+	{
+		return (1);
+	}
+	aux = *head;
 	if (recursion_is_palindrome(head, aux) == 2)
 	{
 		return (1);
