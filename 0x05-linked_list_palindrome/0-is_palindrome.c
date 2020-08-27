@@ -29,7 +29,6 @@ int is_palindrome(listint_t **head)
  * @aux: pointer auxiliar that starts in the head of the list
  * Return: 0 if it is not a palindrome, 1 if it is a palindrome
  */
-
 int recursion_is_palindrome(listint_t **head, listint_t *aux)
 {
 	int result;
