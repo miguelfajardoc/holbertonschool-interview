@@ -12,13 +12,12 @@ def main():
     counter = 0
     try:
         for line in sys.stdin:
-            if counter != 10:
-                data = line.split(" ")
-                if len(data) > 2:
-                    file_size += (int)(data[-1])
-                    add_status_code_to_dict(data[-2], status_code_dict)
-                    counter += 1
-            else:
+            data = line.split(" ")
+            if len(data) > 2:
+                file_size += (int)(data[-1])
+                add_status_code_to_dict(data[-2], status_code_dict)
+                counter += 1
+            if counter == 10:
                 print_logs(file_size, status_code_dict, possible_status_code)
                 counter = 0
     except Exception:
