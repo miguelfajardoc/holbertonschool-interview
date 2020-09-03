@@ -20,7 +20,7 @@ def main():
             else:
                 print_logs(file_size, status_code_dict, possible_status_code)
                 counter = 0
-    except KeyboardInterrupt:
+    except Exception:
         pass
     finally:
         print_logs(file_size, status_code_dict, possible_status_code)
