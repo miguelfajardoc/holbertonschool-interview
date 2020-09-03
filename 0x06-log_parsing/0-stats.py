@@ -7,12 +7,13 @@ import sys
 def main():
     file_size = 0
     status_code_dict = {}
-    possible_status_code = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    possible_status_code = ["200", "301", "400", "401", "403", "404", "405",
+                            "500"]
     counter = 0
     try:
         for line in sys.stdin:
             if counter != 10:
-                data = line.split()
+                data = line.split(" ")
                 if len(data) > 2:
                     file_size += (int)(data[-1])
                     add_status_code_to_dict(data[-2], status_code_dict)
