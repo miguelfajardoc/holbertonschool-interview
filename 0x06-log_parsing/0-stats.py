@@ -2,7 +2,6 @@
 """ module that do stats """
 
 import sys
-import signal
 
 
 def main():
@@ -14,7 +13,7 @@ def main():
         for line in sys.stdin:
             if counter != 10:
                 data = line.split()
-                if len(data) >= 2:
+                if len(data) > 2:
                     file_size += (int)(data[-1])
                     add_status_code_to_dict((int)(data[-2]), status_code_dict)
                     counter += 1
