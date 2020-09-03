@@ -22,10 +22,9 @@ def main():
                 print_logs(file_size, status_code_dict, possible_status_code)
                 counter = 0
     except KeyboardInterrupt:
-        raise KeyboardInterrupt
+        pass
     finally:
         print_logs(file_size, status_code_dict, possible_status_code)
-    # raise KeyboardInterrupt
 
 
 def add_status_code_to_dict(status_code, status_code_dict):
