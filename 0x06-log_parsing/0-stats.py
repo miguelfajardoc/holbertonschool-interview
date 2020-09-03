@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" module that do stats """
 
 import sys
 import signal
