@@ -7,7 +7,7 @@
  */
 int is_palindrome(unsigned long n)
 {
-	unsigned long long int big_zero = 1000000000000000000;
+	unsigned long int big_zero = 1000000000000000000;
 	int top = 0;
 	int bot = 0;
 
