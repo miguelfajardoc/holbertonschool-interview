@@ -2,8 +2,8 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_node - create a node of a binary tree
- * @parent: the parent of te new node
+ * heap_insert - create a node of a binary tree
+ * @root: the parent of te new node
  * @value: the value that hold the node
  * Return: a pointer of the new node or null on failure
  */
@@ -51,9 +51,9 @@ heap_t *heap_insert(heap_t **root, int value)
 }
 
 /**
- * swap_will_be_done - do a swap between two nodes in binary tree
- * @parent: the parent of the new node
- * @child: the child
+ * check_for_swap_will_be_done - do a swap between two nodes in binary tree
+ * @parentt: the parent of the new node
+ * @childd: the child
  * Return: 1 if the parent is actualized, 0 otherwise
  */
 int check_for_swap_will_be_done(heap_t **parentt,  heap_t **childd)
@@ -65,24 +65,17 @@ int check_for_swap_will_be_done(heap_t **parentt,  heap_t **childd)
 	{
 		child->parent = parent->parent;
 		if (parent->left == child)
-		{
-			parent->left = child->left;
-			child->left = parent;
-			aux = child->right;
+		{	parent->left = child->left;
+			child->left = parent, aux = child->right;
 			child->right = parent->right;
-			parent->parent = child;
-			parent->right = aux;
+			parent->parent = child, parent->right = aux;
 			if (child->right)
 				child->right->parent = child;
 		}
 		else
-		{
-			parent->right = child->right;
-			child->right = parent;
-			aux = child->left;
-			child->left = parent->left;
-			parent->parent = child;
-			parent->left = aux;
+		{	parent->right = child->right, child->right = parent;
+			aux = child->left, child->left = parent->left;
+			parent->parent = child,	parent->left = aux;
 			if (child->left)
 				child->left->parent = child;
 		}
@@ -90,8 +83,7 @@ int check_for_swap_will_be_done(heap_t **parentt,  heap_t **childd)
 			parent->left->parent = parent;
 		if (parent->right)
 			parent->right->parent = parent;
-		prev_parent = parent;
-		parent = child->parent;
+		prev_parent = parent, parent = child->parent;
 		if (parent)
 		{
 			if (parent->left == prev_parent)
@@ -102,8 +94,7 @@ int check_for_swap_will_be_done(heap_t **parentt,  heap_t **childd)
 	}
 	if (parent == NULL)
 	{
-		parent = child;
-		*parentt = parent;
+		parent = child, *parentt = parent;
 		return (1);
 	}
 	return (0);
@@ -132,10 +123,10 @@ heap_t *asign_new_node(heap_t *parent, int value)
 	}
 	else
 	{
-		printf("something go like shit unexpectly, parent have to be some son pointer in null!/n");
-		return NULL;
+		printf("something go like shit, parent have null son/n");
+		return (NULL);
 	}
-	return new_node;
+	return (new_node);
 }
 
 
@@ -153,7 +144,7 @@ heap_t *perfect_binary_tree(heap_t **root)
 
 	while (left_p->left)
 	{
-		if(left_p->left != NULL && right_p->right != NULL)
+		if (left_p->left != NULL && right_p->right != NULL)
 		{
 			left_p = left_p->left;
 			right_p = right_p->right;
